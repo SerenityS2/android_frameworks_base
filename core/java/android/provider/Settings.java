@@ -2928,6 +2928,7 @@ public final class Settings {
         public static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
 
         /**
+<<<<<<< HEAD
          * Display style of the status bar battery information
          * 0: Display the stock battery information
          * 1: Display cm battery percentage implementation / dont show stock icon
@@ -2942,6 +2943,16 @@ public final class Settings {
 
 	/**
          * HALO enabled, should default to 0 (HALO is disabled)
+=======
+         * Whether or not to use a center clock in phone status bar
+         *
+         * @hide
+         */
+        public static final String STATUS_BAR_CENTER_CLOCK = "status_bar_center_clock";
+
+        /**
+         * HALO enabled, should default to 0 (no, HALO is disabled)
+>>>>>>> 5f3f8d7... Add center clock (1/2)
          * @hide
          */
         public static final String HALO_ENABLED = "halo_enabled";
