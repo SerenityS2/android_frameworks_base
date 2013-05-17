@@ -2894,6 +2894,13 @@ public final class Settings {
         public static final String STATUS_BAR_CIRCLE_BATTERY_RESET = "status_bar_circle_battery_reset";
 
          /**
+         * Holds the text for the Carrier label. An empty string
+         * will bring the default text back.
+         * @hide
+         */
+        public static final String CUSTOM_CARRIER_LABEL = "custom_carrier_label";
+
+         /**
          * Expanded desktop on/off state
          * @hide
          */
