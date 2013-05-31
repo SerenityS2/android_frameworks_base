@@ -2891,6 +2891,12 @@ public final class Settings {
         public static final String FULLSCREEN_STATUSBAR = "fullscreen_statusbar";
 
         /**
+         * Timeout of fullscreen Status bar
+         * @hide
+         */
+        public static final String FULLSCREEN_STATUSBAR_TIMEOUT = "fullscreen_statusbar_timeout";
+
+        /**
          * HALO enabled, should default to 0 (no, HALO is disabled)
          * @hide
          */
