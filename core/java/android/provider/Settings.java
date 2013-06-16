@@ -2948,6 +2948,7 @@ public final class Settings {
          * Sets color of statusbar
          * @hide
          */
+<<<<<<< HEAD
         public static final String STATUS_BAR_COLOR = "status_bar_color";
 
         /**
@@ -2992,6 +2993,12 @@ public final class Settings {
          * @hide
          */
         public static final String EXPANDED_DESKTOP_STYLE = "expanded_desktop_style";
+
+        /**
+         * Network speed indicator
+         * @hide
+         */
+        public static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
 
         /**
          * Whether to use a separate delay for "slide to unlock" and security
