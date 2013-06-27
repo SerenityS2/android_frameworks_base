@@ -86,7 +86,8 @@ public class HaloProperties extends FrameLayout {
         mHaloNumber.setAlpha(0f);
 
         mHaloOverlayAnimator = new CustomObjectAnimator(this);
-    }
+
+    } 
 
     public void setHaloX(int value) {
         mHaloX = value;
