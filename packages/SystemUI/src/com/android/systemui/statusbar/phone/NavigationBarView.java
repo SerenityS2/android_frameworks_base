@@ -109,6 +109,7 @@ public class NavigationBarView extends LinearLayout implements BaseStatusBar.Nav
     final static int MSG_CHECK_INVALID_LAYOUT = 8686;
 
     private float mAlpha;
+    private float mLockAlpha;
     private int mAlphaMode;
     private int mNavBarColor;
     private boolean mIsHome = true;	
@@ -368,6 +369,8 @@ public class NavigationBarView extends LinearLayout implements BaseStatusBar.Nav
                 || (isKeyguardEnabled() && mAlphaMode == 0)
                 || (!isKeyguardEnabled() && mIsHome == false && mAlphaMode != 2)) {
             setBackgroundAlpha(1);
+        } else if (isKeyguardEnabled() || mAlphaMode == 2) {
+            setBackgroundAlpha(mLockAlpha);
         } else {
             setBackgroundAlpha(mAlpha);
         }
@@ -646,6 +649,10 @@ public class NavigationBarView extends LinearLayout implements BaseStatusBar.Nav
                     this);
 
             resolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.NAVIGATION_BAR_ALPHA_LOCKSCREEN), false,
+                    this);
+
+            resolver.registerContentObserver(
                     Settings.System.getUriFor(Settings.System.NAVIGATION_BAR_ALPHA), false,
                     this);
 
@@ -670,6 +677,10 @@ public class NavigationBarView extends LinearLayout implements BaseStatusBar.Nav
 
         mAlpha = 1 - Settings.System.getFloat(resolver,
                 Settings.System.NAVIGATION_BAR_ALPHA, 0.0f);
+
+        mLockAlpha = 1.0f - Settings.System.getFloat(mContext.getContentResolver(),
+                       Settings.System.NAVIGATION_BAR_ALPHA_LOCKSCREEN,
+                       0.0f);
 
         mAlphaMode = Settings.System.getInt(resolver,
                 Settings.System.NAV_BAR_ALPHA_MODE, 1);

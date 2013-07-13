@@ -2956,7 +2956,7 @@ public final class Settings {
          */
         public static final String IS_HOME = "is_home";
 
-  /**
+        /**
          * Navigation bar color
          * @hide
          */
@@ -2967,6 +2967,12 @@ public final class Settings {
          * @hide
          */
         public static final String NAVIGATION_BAR_ALPHA = "navigation_bar_alpha";
+
+         /**
+         * Navigation bar alpha lockscreen
+         * @hide
+         */
+        public static final String NAVIGATION_BAR_ALPHA_LOCKSCREEN = "navigation_bar_alpha_lockscreen";
 
         /**
          * Sets transparency mode of navigation bar
