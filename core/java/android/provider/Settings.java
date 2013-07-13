@@ -2932,6 +2932,12 @@ public final class Settings {
         public static final String STATUS_BAR_ALPHA = "status_bar_alpha";
 
         /**
+         * Sets transparency of statusbar lockscreen
+         * @hide
+         */
+        public static final String STATUS_BAR_ALPHA_LOCKSCREEN = "status_bar_alpha_lockscreen";
+
+        /**
          * Sets transparency mode of statusbar
          * 0 = only home, 1 = keyguard and home (default), 2 = always
          * @hide
