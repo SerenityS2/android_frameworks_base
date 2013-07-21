@@ -779,6 +779,11 @@ public class Halo extends FrameLayout implements Ticker.TickerCallback {
                             gestureText = "";
                         } else if (deltaY > 0) { 
                             if (deltaIndex == 1 && mGesture != Gesture.UP1) {
+                                mGesture = Gesture.UP1;
+                                gestureChanged = true;
+                                mEffect.setHaloOverlay(HaloProperties.Overlay.DISMISS, 1f);
+                                gestureText = mContext.getResources().getString(R.string.halo_dismiss);
+                            } else if (deltaIndex > 1 && mGesture != Gesture.UP2) {
                                 mGesture = Gesture.UP2;
                                 gestureChanged = true;
                                 mEffect.setHaloOverlay(HaloProperties.Overlay.CLEAR_ALL, 1f);
