@@ -283,6 +283,23 @@ public class NavigationBarView extends LinearLayout implements BaseStatusBar.Nav
         removeButtonListeners();
         updateButtonListeners();
         setDisabledFlags(mDisabledFlags, true /* force */);
+
+        ContentResolver resolver = mContext.getContentResolver();
+
+        mNavBarColor = Settings.System.getInt(resolver,
+                Settings.System.NAVIGATION_BAR_COLOR, -1);
+
+        mAlpha = 1 - Settings.System.getFloat(resolver,
+                Settings.System.NAVIGATION_BAR_ALPHA, 0.0f);
+
+        mLockAlpha = 1.0f - Settings.System.getFloat(mContext.getContentResolver(),
+                       Settings.System.NAVIGATION_BAR_ALPHA_LOCKSCREEN,
+                       0.0f);
+
+        mAlphaMode = Settings.System.getInt(resolver,
+                Settings.System.NAV_BAR_ALPHA_MODE, 1);
+
+        makeBar();
     }
 
     @Override
@@ -667,26 +684,6 @@ public class NavigationBarView extends LinearLayout implements BaseStatusBar.Nav
         public void onChange(boolean selfChange) {
             updateSettings();
         }
-    }
-
-    protected void updateSettings() {
-        ContentResolver resolver = mContext.getContentResolver();
-
-        mNavBarColor = Settings.System.getInt(resolver,
-                Settings.System.NAVIGATION_BAR_COLOR, -1);
-
-        mAlpha = 1 - Settings.System.getFloat(resolver,
-                Settings.System.NAVIGATION_BAR_ALPHA, 0.0f);
-
-        mLockAlpha = 1.0f - Settings.System.getFloat(mContext.getContentResolver(),
-                       Settings.System.NAVIGATION_BAR_ALPHA_LOCKSCREEN,
-                       0.0f);
-
-        mAlphaMode = Settings.System.getInt(resolver,
-                Settings.System.NAV_BAR_ALPHA_MODE, 1);
-
-        makeBar();
-
     }
 
     private String getResourceName(int resId) {

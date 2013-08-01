@@ -116,9 +116,6 @@ public class CircleBattery extends ImageView implements BatteryController.Batter
 
             Resources res = getResources();
 
-            batteryStyle = (Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.STATUS_BAR_BATTERY, 0));
-
             mCircleColor = (Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_CIRCLE_BATTERY_COLOR, res.getColor(R.color.holo_blue_dark)));
             mCircleTextColor = (Settings.System.getInt(mContext.getContentResolver(),

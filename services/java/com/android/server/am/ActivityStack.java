@@ -3894,16 +3894,9 @@ final class ActivityStack {
                     || (mHistory.get(index-1)).task != r.task;
             if (DEBUG_TRANSITION) Slog.v(TAG,
                     "Prepare close transition: finishing " + r);
-<<<<<<< HEAD
-            mService.mWindowManager.prepareAppTransition(endTask
+            mService.mWindowManager.prepareAppTransition(endTask && !r.floatingWindow
                     ? AppTransition.TRANSIT_TASK_CLOSE
                     : AppTransition.TRANSIT_ACTIVITY_CLOSE, false);
-=======
-            mService.mWindowManager.prepareAppTransition(endTask && !r.floatingWindow
-                    ? WindowManagerPolicy.TRANSIT_TASK_CLOSE
-                    : WindowManagerPolicy.TRANSIT_ACTIVITY_CLOSE, false);
->>>>>>> ca28429... HALO
-    
             // Tell window manager to prepare for this one to be removed.
             mService.mWindowManager.setAppVisibility(r.appToken, false);
                 
