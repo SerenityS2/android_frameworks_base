@@ -446,10 +446,6 @@ public abstract class BaseStatusBar extends SystemUI implements
 
         updateHaloButton();
 
-        if (!mHaloEnabled) {
-            mHaloActive = false;
-        }
-
         if (mHaloActive) {
             if (mHalo == null) {
                 LayoutInflater inflater = (LayoutInflater) mContext
