@@ -3522,7 +3522,7 @@ public final class Settings {
          * 7 == Translate (Left)
          * 8 == Translate (Right)
          */
-         public static final String LISTVIEW_ANIMATION = "listview_animation";
+        public static final String LISTVIEW_ANIMATION = "listview_animation";
 
         /**
          * ListView Interpolators
@@ -3535,7 +3535,15 @@ public final class Settings {
          * 6 == anticipate_overshoot_interpolator
          * 7 == bounce_interpolator
          */
-         public static final String LISTVIEW_INTERPOLATOR = "listview_interpolator";
+        public static final String LISTVIEW_INTERPOLATOR = "listview_interpolator";
+
+    /**
+         * Peek at stausbar when it is hidden by swiping down from top
+         * end of the screen
+         *
+         * @hide
+         */
+        public static final String STATUSBAR_PEEK = "statusbar_peek";  
 
     }
 
