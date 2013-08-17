@@ -684,7 +684,6 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
                         holder.thumbnailViewImage, bm, 0, 0, null).toBundle();
 
         show(false);
-        if (ad.taskId >= 0) {
         Intent intent = ad.intent;
         boolean floating = (intent.getFlags() & Intent.FLAG_FLOATING_WINDOW) == Intent.FLAG_FLOATING_WINDOW;
         if (ad.taskId >= 0 && !floating) {
@@ -692,7 +691,6 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
             am.moveTaskToFront(ad.taskId, ActivityManager.MOVE_TASK_WITH_HOME,
                     opts);
         } else {
-            Intent intent = ad.intent;
             boolean backPressed = mRecentsActivity != null && mRecentsActivity.mBackPressed;
             if (!floating || !backPressed) {
                 intent.addFlags(Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY
