@@ -518,5 +518,7 @@
     <string name="status_bar_help_text">Access them anytime by swiping down.\nSwipe down again for system controls.</string>
     <!-- Title shown in recents popup for showing app in floating mode -->
     <string name="status_bar_recent_floating_item_title">Floating mode</string>
+    <string name="halo_dismiss">Dismiss notification</string>
+    <string name="halo_hide">Hide HALO</string>
 
 </resources>
