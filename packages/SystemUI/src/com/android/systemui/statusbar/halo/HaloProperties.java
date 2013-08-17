@@ -1,3 +1,19 @@
+/*
+* Copyright (C) 2013 ParanoidAndroid.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
 package com.android.systemui.statusbar.halo;
 
 import android.content.Context;
@@ -19,7 +35,9 @@ public class HaloProperties extends FrameLayout {
         BLACK_X,
         BACK_LEFT,
         BACK_RIGHT,
-        DISMISS
+        DISMISS,
+        SILENCE,
+        CLEAR_ALL
     }
 
     private LayoutInflater mInflater;
@@ -31,6 +49,8 @@ public class HaloProperties extends FrameLayout {
     private Drawable mHaloBackL;
     private Drawable mHaloBackR;
     private Drawable mHaloBlackX;
+    private Drawable mHaloClearAll;
+    private Drawable mHaloSilence;
     private Drawable mHaloCurrentOverlay;
 
     protected View mHaloBubble;
@@ -51,6 +71,8 @@ public class HaloProperties extends FrameLayout {
         mHaloBackL = mContext.getResources().getDrawable(R.drawable.halo_back_left);
         mHaloBackR = mContext.getResources().getDrawable(R.drawable.halo_back_right);
         mHaloBlackX = mContext.getResources().getDrawable(R.drawable.halo_black_x);
+        mHaloClearAll = mContext.getResources().getDrawable(R.drawable.halo_clear_all);
+        mHaloSilence = mContext.getResources().getDrawable(R.drawable.halo_silence);
 
         mInflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -70,7 +92,8 @@ public class HaloProperties extends FrameLayout {
         mHaloNumber.setAlpha(0f);
 
         mHaloOverlayAnimator = new CustomObjectAnimator(this);
-    }
+
+    } 
 
     public void setHaloX(int value) {
         mHaloX = value;
@@ -119,6 +142,12 @@ public class HaloProperties extends FrameLayout {
             case DISMISS:
                 d = mHaloDismiss;
                 break;
+            case SILENCE:
+                d = mHaloSilence;
+                break;
+            case CLEAR_ALL:
+                d = mHaloClearAll;
+                break;
         }
 
         if (d != mHaloCurrentOverlay) {
@@ -126,9 +155,7 @@ public class HaloProperties extends FrameLayout {
             mHaloCurrentOverlay = d;
         }
 
-        mHaloOverlayAnimator.animate(ObjectAnimator.ofFloat(mHaloOverlay, "alpha", overlayAlpha).setDuration(250),
-                new DecelerateInterpolator(), null);
-
+        mHaloOverlay.setAlpha(overlayAlpha);
         updateResources();
     }
 

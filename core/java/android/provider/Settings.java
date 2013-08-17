@@ -3577,6 +3577,11 @@ public final class Settings {
         public static final String HALO_ENABLED = "halo_enabled";
 
         /**
+         * @hide
+         */
+        public static final String HALO_GONE = "halo_gone";
+
+        /**
          * Do you want popups/floating windows?
          * @hide
          */
