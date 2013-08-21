@@ -51,6 +51,11 @@
 
         </com.android.systemui.recent.RecentsHorizontalScrollView>
 
+        <com.android.systemui.recent.CircleMemory
+            android:id="@+id/circle_meter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
         <ImageView
             android:id="@+id/recents_clear"
             android:clickable="true"

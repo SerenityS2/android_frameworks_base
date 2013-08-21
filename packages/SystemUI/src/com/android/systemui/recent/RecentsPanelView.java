@@ -153,7 +153,6 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
             holder.iconView = (ImageView) convertView.findViewById(R.id.app_icon);
             holder.iconView.setImageBitmap(mRecentTasksLoader.getDefaultIcon());
             holder.labelView = (TextView) convertView.findViewById(R.id.app_label);
-            holder.calloutLine = convertView.findViewById(R.id.recents_callout_line);
             holder.descriptionView = (TextView) convertView.findViewById(R.id.app_description);
 
             convertView.setTag(holder);
