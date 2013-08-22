@@ -44,8 +44,11 @@ import com.android.internal.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Digital clock for the status bar.
@@ -88,6 +91,9 @@ public class Clock extends TextView implements OnClickListener, OnLongClickListe
             updateSettings();
         }
     }
+
+    private final Handler handler = new Handler();
+    TimerTask second;
 
     public Clock(Context context) {
         this(context, null);
@@ -232,6 +238,11 @@ public class Clock extends TextView implements OnClickListener, OnLongClickListe
         }
         String result = sdf.format(mCalendar.getTime());
 
+        if (Settings.System.getInt(mContext.getContentResolver(), Settings.System.CLOCK_USE_SECOND, 0) == 1) {
+            String temp = result;
+            result = String.format("%s:%02d", temp, new GregorianCalendar().get(Calendar.SECOND));
+        }
+
         if (mAmPmStyle != AM_PM_STYLE_NORMAL) {
             int magic1 = result.indexOf(MAGIC1);
             int magic2 = result.indexOf(MAGIC2);
@@ -268,6 +279,24 @@ public class Clock extends TextView implements OnClickListener, OnLongClickListe
                 updateClock();
             }
         }
+
+        second = new TimerTask()
+        {
+            @Override
+            public void run()
+             {
+                Runnable updater = new Runnable()
+                  {        
+                   public void run()
+                   {     
+                       updateClock();
+                   }
+                  };
+                handler.post(updater);
+             }
+        };
+        Timer timer = new Timer();
+        timer.schedule(second, 0, 1001); 
 
         updateVisibility();
     }

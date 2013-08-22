@@ -3605,6 +3605,12 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_COLOR = "status_bar_color";
+
+        /** 
+         * Display second in the Clock
+         * @hide
+         */
+        public static final String CLOCK_USE_SECOND = "clock_use_second";
     }
 
     /**
