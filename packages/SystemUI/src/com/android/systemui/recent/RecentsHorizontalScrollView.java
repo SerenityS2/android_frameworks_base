@@ -224,9 +224,7 @@ public class RecentsHorizontalScrollView extends HorizontalScrollView
     public void onChildDismissed(View v) {
         addToRecycledViews(v);
         mLinearLayout.removeView(v);
-        if (mCallback != null) {
-          mCallback.handleSwipe(v);
-        }
+        mCallback.handleSwipe(v);
         // Restore the alpha/translation parameters to what they were before swiping
         // (for when these items are recycled)
         View contentView = getChildContentView(v);
