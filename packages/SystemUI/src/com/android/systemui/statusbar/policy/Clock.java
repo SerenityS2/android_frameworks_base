@@ -144,8 +144,23 @@ public class Clock extends TextView implements OnClickListener, OnLongClickListe
         // The time zone may have changed while the receiver wasn't registered, so update the Time
         mCalendar = Calendar.getInstance(TimeZone.getDefault());
 
-        // Make sure we update to the current time
-        updateClock();
+        second = new TimerTask()
+        {
+            @Override
+            public void run()
+             {
+                Runnable updater = new Runnable()
+                  {        
+                   public void run()
+                   {     
+                       updateClock();
+                   }
+                  };
+                handler.post(updater);
+             }
+        };
+        Timer timer = new Timer();
+        timer.schedule(second, 0, 1001); 
     }
 
     @Override
@@ -279,25 +294,6 @@ public class Clock extends TextView implements OnClickListener, OnLongClickListe
                 updateClock();
             }
         }
-
-        second = new TimerTask()
-        {
-            @Override
-            public void run()
-             {
-                Runnable updater = new Runnable()
-                  {        
-                   public void run()
-                   {     
-                       updateClock();
-                   }
-                  };
-                handler.post(updater);
-             }
-        };
-        Timer timer = new Timer();
-        timer.schedule(second, 0, 1001); 
-
         updateVisibility();
     }
 
@@ -344,4 +340,3 @@ public class Clock extends TextView implements OnClickListener, OnLongClickListe
         return true;
     }
 }
-
