@@ -79,6 +79,7 @@ import android.view.animation.Animation;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
+import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 import android.view.animation.AnimationUtils;
 
