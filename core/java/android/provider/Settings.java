@@ -3545,6 +3545,12 @@ public final class Settings {
          */
         public static final String STATUSBAR_PEEK = "statusbar_peek";
 
+         /**
+         * Timeout of status-bar Quick Peek
+         * @hide
+         */
+        public static final String STATUSBAR_QUICK_PEEK_TIMEOUT = "statusbar_quick_peek_timeout";
+
         /**
          * HALO, should default to 0 (no, do not show)
          * @hide
