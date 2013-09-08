@@ -2954,7 +2954,6 @@ public final class Settings {
          * Sets color of statusbar
          * @hide
          */
-<<<<<<< HEAD
         public static final String STATUS_BAR_COLOR = "status_bar_color";
 
         /**
