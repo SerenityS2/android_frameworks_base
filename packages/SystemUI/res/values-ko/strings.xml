@@ -226,6 +226,18 @@
     <string name="halo_tutorial1">이것은 HALO입니다.</string>
     <string name="halo_tutorial2">두번 탭해서 이동하고/n드래그할 수 있습니다.</string>
     <string name="halo_tutorial3">가로로 드래그해서/n설정을 변경할 수 있습니다.</string>
+    <string name="halo_battery_plugged">충전 중</string>
+    <string name="halo_battery_unplugged">방전 중</string>
+    <string name="halo_battery_full">충전됨</string>
+    <string name="halo_aeroplane1">비행기</string>
+    <string name="halo_aeroplane2">모드</string>
+    <string name="halo_wifi_on">WI-FI 켜기</string>
+    <string name="halo_wifi_off">WI-FI 끄기</string>
+    <string name="halo_signal_bars_4">네 칸</string>
+    <string name="halo_signal_bars_3">세 칸</string>
+    <string name="halo_signal_bars_2">두 칸</string>
+    <string name="halo_signal_bars_1">한 칸</string>
+    <string name="halo_signal_bars_none">신호 없음</string>
 
 	<string name="notification_section_divider">알림 및 진행 중</string>
 </resources>
