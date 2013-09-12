@@ -442,7 +442,7 @@ public abstract class BaseStatusBar extends SystemUI implements
         }
     }
 
-    protected void restartHalo() {
+    public void restartHalo() {
         if (mHalo != null) {
             mHalo.cleanUp();
             mWindowManager.removeView(mHalo);
@@ -452,7 +452,7 @@ public abstract class BaseStatusBar extends SystemUI implements
         updateHalo();
     }
 
-    public void updateHalo() {
+    protected void updateHalo() {
         mHaloActive = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_ACTIVE, 0) == 1;
 
