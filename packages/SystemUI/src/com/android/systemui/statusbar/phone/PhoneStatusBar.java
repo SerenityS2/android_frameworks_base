@@ -86,6 +86,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+<<<<<<< HEAD
+=======
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
+>>>>>>> 0e846d1... Add active display to ChameleonOS [1/2]
 import android.widget.TextView;
 
 import android.service.notification.StatusBarNotification;
@@ -573,9 +578,15 @@ public class PhoneStatusBar extends BaseStatusBar {
             //if (mAppSidebar != null)
             //    mWindowManager.removeView(mAppSidebar);
             removeSidebarView();
+        } else {
+            addActiveDisplayView();
         }
+<<<<<<< HEAD
         //mAppSidebar = (AppSidebar)View.inflate(context, R.layout.app_sidebar, null);
         //mWindowManager.addView(mAppSidebar, getAppSidebarLayoutParams(mSidebarPosition));
+=======
+
+>>>>>>> 0e846d1... Add active display to ChameleonOS [1/2]
         addSidebarView();
 
         // figure out which pixel-format to use for the status bar.
@@ -2416,7 +2427,7 @@ public class PhoneStatusBar extends BaseStatusBar {
         setAreThereNotifications();
     }
 
-    private boolean areLightsOn() {
+    public boolean areLightsOn() {
         return 0 == (mSystemUiVisibility & View.SYSTEM_UI_FLAG_LOW_PROFILE);
     }
 
@@ -2434,6 +2445,10 @@ public class PhoneStatusBar extends BaseStatusBar {
             mWindowManagerService.statusBarVisibilityChanged(mSystemUiVisibility);
         } catch (RemoteException ex) {
         }
+    }
+
+    public void setNavigationBarLightsOn(boolean on, boolean force) {
+        mNavigationBarView.setLowProfile(!on, true, force);
     }
 
     @Override

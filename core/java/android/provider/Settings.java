@@ -2578,12 +2578,15 @@ public final class Settings {
 
         /**
 <<<<<<< HEAD
+<<<<<<< HEAD
         * Whether music controls should be shown on the lockscreen if a supporting
         * music player is active.
         * @hide
         */
         public static final String LOCKSCREEN_MUSIC_CONTROLS = "lockscreen_music_controls";
 =======
+=======
+>>>>>>> 0e846d1... Add active display to ChameleonOS [1/2]
          * Whether to display notifications on screen when screen is off
          * @hide
          */
@@ -2593,32 +2596,52 @@ public final class Settings {
          * Whether to display notification messages around ring
          * @hide
          */
+<<<<<<< HEAD
         public static final String ACTIVE_DISPLAY_TEXT = "active_display_text";
+=======
+        public static final String ACTIVE_DISPLAY_TEXT = "active_displaytext";
+>>>>>>> 0e846d1... Add active display to ChameleonOS [1/2]
 
         /**
          * Time to redisplay notifications on screen from when screen turns off, 0 = never redisplay
          * @hide
          */
+<<<<<<< HEAD
         public static final String ACTIVE_DISPLAY_REDISPLAY = "active_display_redisplay";
+=======
+        public static final String ACTIVE_DISPLAY_REDISPLAY = "active_displayredisplay";
+>>>>>>> 0e846d1... Add active display to ChameleonOS [1/2]
 
         /**
          * Brightness of the display when displaying the active display view
          * @hide
          */
+<<<<<<< HEAD
         public static final String ACTIVE_DISPLAY_BRIGHTNESS = "active_display_brightness";
+=======
+        public static final String ACTIVE_DISPLAY_BRIGHTNESS = "active_displaybrightness";
+>>>>>>> 0e846d1... Add active display to ChameleonOS [1/2]
 
         /**
          * Display active display view when device comes out of the user's pocket, etc...
          * @hide
          */
+<<<<<<< HEAD
         public static final String ACTIVE_DISPLAY_POCKET_MODE = "active_display_pocket_mode";
+=======
+        public static final String ACTIVE_DISPLAY_POCKET_MODE = "active_displaypocket_mode";
+>>>>>>> 0e846d1... Add active display to ChameleonOS [1/2]
 
         /**
          * Whether to include ongoing/non-clearable notifications
          * @hide
          */
+<<<<<<< HEAD
         public static final String ACTIVE_DISPLAY_ALL_NOTIFICATIONS = "active_display_all_notifications";
 >>>>>>> 504a336... Correct active display settings naming
+=======
+        public static final String ACTIVE_DISPLAY_ALL_NOTIFICATIONS = "active_displayall_notifications";
+>>>>>>> 0e846d1... Add active display to ChameleonOS [1/2]
 
         /**
          * @deprecated Use {@link android.provider.Settings.Global#LOW_BATTERY_SOUND}
