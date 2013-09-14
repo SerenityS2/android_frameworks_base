@@ -3844,10 +3844,6 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                 // has the FLAG_FULLSCREEN set.  Not sure if there is another way that to be the
                 // case though.
                 if (topIsFullscreen || expandedDesktopHidesStatusBar()) {
-                mHideStatusBar = Settings.System.getInt(mContext.getContentResolver(),
-                        Settings.System.HIDE_STATUSBAR, 0) == 1;
-                if ((topIsFullscreen) || (mExpandedState == 1 && (mExpandedStyle == 2 
-            		|| mExpandedStyle == 3)) || (mHideStatusBar) || expandedDesktopHidesStatusBar()) { 
                     if (DEBUG_LAYOUT) Log.v(TAG, "** HIDING status bar");
                     if (mStatusBar.hideLw(true)) {
                         changes |= FINISH_LAYOUT_REDO_LAYOUT;
