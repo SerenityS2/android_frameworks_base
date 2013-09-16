@@ -95,6 +95,8 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
     private boolean mHighEndGfx;
     private ImageView mClearRecents;
 
+    private RecentsActivity mRecentsActivity;
+
     public static interface RecentsScrollView {
         public int numItemsInOneScreenful();
         public void setAdapter(TaskDescriptionAdapter adapter);
@@ -743,6 +745,7 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
                         new UserHandle(UserHandle.USER_CURRENT));
                 if (floating && mRecentsActivity != null) {
                     mRecentsActivity.finish();
+                }
             } catch (SecurityException e) {
                 Log.e(TAG, "Recents does not have the permission to launch " + intent, e);
             }
