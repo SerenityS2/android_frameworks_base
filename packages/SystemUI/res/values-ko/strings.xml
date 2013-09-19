@@ -210,6 +210,8 @@
     <string name="pie_battery_status_full">충전됨</string>
     <string name="pie_battery_status_discharging"><xliff:g id="percent">%d</xliff:g>%% 사용 가능</string>
 
+    <string name="recent_title_txt">최근 실행한 앱</string>
+
     <!-- Phone status in pie controls -->
     <string name="pie_phone_status_no_service">서비스 불가</string>
     <string name="pie_phone_status_airplane_mode">비행기 모드</string>
