@@ -101,6 +101,7 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
 
     TextView mTotalRam;
     TextView mFreeRam;
+    TextView mRecentTitle;
 
     Handler mHandler = new Handler();
     ActivityManager mAm;
@@ -371,6 +372,9 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
             mRecentsNoApps.setAlpha(1f);
             mRecentsNoApps.setVisibility(noApps ? View.VISIBLE : View.INVISIBLE);
             mClearRecents.setVisibility(noApps ? View.GONE : View.VISIBLE);
+            mFreeRam.setVisibility(noApps ? View.GONE : View.VISIBLE);
+            mTotalRam.setVisibility(noApps ? View.GONE : View.VISIBLE);
+            mRecentTitle.setVisibility(noApps ? View.GONE : View.VISIBLE);
             onAnimationEnd(null);
             setFocusable(true);
             setFocusableInTouchMode(true);
@@ -519,6 +523,7 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
 
         mTotalRam = (TextView) findViewById(R.id.total_ram);
         mFreeRam = (TextView) findViewById(R.id.free_ram);
+        mRecentTitle = (TextView) findViewById(R.id.recent_title);
 
         mHandler.post(updateRam);
     }
